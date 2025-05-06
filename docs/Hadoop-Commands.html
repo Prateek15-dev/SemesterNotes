@@ -1,0 +1,443 @@
+<!--
+*********************************************************************************************
+* File: Hadoop-Commands.html
+* Author: Madhurima Rawat
+* Date: December 05, 2024
+* Description: Study resources commands website showing some comman commands used in Hadoop.
+*              It also features a dynamic color-changing dropdown menu using JavaScript.
+* Version: 1.0
+* GitHub Repository: https://github.com/madhurimarawat/Semester-Notes
+* Issues/Bugs: For any issues or bugs, please visit the GitHub repository issues section.
+* Comments: This HTML file serves as the foundational structure for a comprehensive Hadoop commands website. 
+*           It organizes content into detailed sections and additional resources for 
+*           commanly used commands.
+* Dependencies:
+    - Font Awesome 5.15.3: External CSS for icons.
+    - Bootstrap 4.5.2: External CSS for responsive design (used in other stylesheets).
+    - JavaScript file (commands.js): Manages the copying of commands and color changing of page.
+    - CSS file (commands.css): Contains styles for this website.
+*********************************************************************************************
+-->
+
+<!--
+
+  This HTML snippet visually represents Git commands with styled command boxes
+  and descriptive elements, emphasizing readability and usability for understanding
+  and applying Git operations easily.
+
+  Summary:
+  - Visual representation of Git commands
+  - Styled command boxes for readability
+  - Descriptive elements for easy understanding
+  - Facilitates application of Git operations
+  
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS  CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/commands.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="images/Book_Logo.jpg" type="image/jpeg">
+    <title>Hadoop Commands</title>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <div class="container">
+            <!-- Home at the Left -->
+            <a class="navbar-brand" href="index.html">Home</a>
+    
+            <!-- Navbar Toggle Button for Mobile -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Centered Navbar Items -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+    
+                    <li class="nav-item dropdown px-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownResources" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Resources
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownResources">
+                            <a class="dropdown-item" href="Astyle-Commands.html">Astyle</a>
+                            <a class="dropdown-item" href="Git-Commands.html">Git</a>
+                            <a class="dropdown-item" href="Hadoop-Commands.html">Hadoop</a>
+                        </div>
+                    </li>
+    
+                    <li class="nav-item dropdown px-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProjects" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownProjects">
+                            <a class="dropdown-item" href="https://library-management-website.netlify.app/">Library
+                                Management System</a>
+                            <a class="dropdown-item"
+                                href="https://ml-model-datasets-using-apps-3gy37ndiancjo2nmu36sls.streamlit.app/">HyperTuneML</a>
+                        </div>
+                    </li>
+    
+    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <section class="section">
+
+        <div class="header-container" style="height: 70px; width:50%; background-color: #fff; display: flex; align-items: center; justify-content: center; margin-left: 25%;">
+            <img src="https://logodix.com/logo/1086545.png" height="40" width="60">
+            <h1 >Hadoop Commands</h1>
+        </div>
+        <br>
+        <div class="intro-box">
+            <h2>Introduction to Apache Hadoop</h2>
+            <p>Apache Hadoop is an open-source framework that allows for the distributed processing of large data sets
+                across
+                clusters of computers using simple programming models. It is designed to scale up from a single server
+                to
+                thousands of machines, each offering local computation and storage. Hadoop is known for its reliability
+                and
+                ability to handle vast amounts of data efficiently.</p>
+
+            <p>The Hadoop Distributed File System (HDFS) is a fundamental component of Hadoop, providing scalable and
+                reliable data
+                storage. HDFS is designed to store very large files across a cluster of machines, ensuring fault
+                tolerance and high
+                availability.
+            </p>
+
+            <p>Another critical component of Hadoop is the MapReduce programming model, which enables efficient data
+                processing across
+                the distributed storage provided by HDFS. MapReduce breaks down data processing tasks into two main
+                phases: the Map
+                phase, which filters and sorts the data, and the Reduce phase, which performs aggregation and
+                summarization.Together with YARN (Yet Another Resource Negotiator), which manages and schedules
+                resources in the Hadoop cluster, these
+                components make Hadoop a robust platform for big data analytics, allowing organizations to gain insights
+                from their data
+                at unprecedented scales.</p>
+        </div>
+
+        <div class="intro-box">
+            <h2>Hadoop Installation and Setup Guide</h2>
+            <p>Before starting Hadoop, ensure you have:</p>
+            <ul class="hadoop-list">
+                <li>Downloaded Hadoop from the <a href="https://hadoop.apache.org/releases.html"
+                        target="_blank">official Hadoop
+                        website</a> and Java from the <a href="https://www.oracle.com/java/technologies/downloads/"
+                        target="_blank">Oracle website</a>. Note that Java is downloaded from Oracle, so if you don’t
+                    have an
+                    account, you will need to create one.</li>
+                <li>Checked if the Hadoop files are already associated with WinRAR (indicated by red box logos on the
+                    files). If
+                    they are, WinRAR is already installed. If not, you can download WinRAR from the <a
+                        href="https://www.rarlab.com/download.htm" target="_blank">official WinRAR website</a>. After
+                    downloading, unzip the Hadoop file into the `C:\Hadoop` directory by right-clicking on the file and
+                    selecting "Extract Here."</li>
+                <li>Verified if `winutils` is running by opening a Command Prompt and typing <code>winutils.exe</code>.
+                    If it is
+                    not recognized or does not run, you will need to download the necessary `msvcr120.dll` file. Follow
+                    these
+                    steps:
+                    <ul>
+                        <li>Go to the <a href="https://www.dll-files.com/msvcr120.dll.html" target="_blank">msvcr120.dll
+                                download page</a> and download the file.</li>
+                        <li>Navigate to the `C:\Windows\System32` directory.</li>
+                        <li>Copy and paste the downloaded `msvcr120.dll` file into the `System32` folder.</li>
+                        <li>After copying the DLL file, try running <code>winutils.exe</code> again in Command Prompt.
+                        </li>
+                    </ul>
+                </li>
+                <li>During Java installation, create two folders within the <code>Java</code> directory: one for the JDK
+                    (<code>C:\Java\jdk</code>) and one for the JRE (<code>C:\Java\jre</code>). Ensure to update the
+                    paths
+                    accordingly in the installation wizard.</li>
+                <li>Created a folder named <code>Hadoop</code> in the root of the Windows (C:) drive for installing
+                    Hadoop.</li>
+                <li>Created a `data` folder within the `Hadoop` directory, and inside the `data` folder, created two
+                    subfolders:
+                    `dfs/namenode` and `dfs/datanode`. These directories are used by Hadoop to store the namenode and
+                    datanode
+                    data.</li>
+                <li>Properly installed Hadoop on the system.</li>
+                <li>Configured the necessary environment variables:
+                    <ul>
+                        <li>Set <code>HADOOP_HOME</code> to <code>C:\Hadoop\bin</code> in the system variables.</li>
+                        <li>Set <code>JAVA_HOME</code> to the JDK path <code>C:\Java\jdk</code> in system
+                            variables.</li>
+                        <li>Added <code>C:\Hadoop\bin</code> and <code>C:\Hadoop\sbin</code> to the system PATH
+                            variable.</li>
+                        <li>Added <code>JAVA_HOME\bin</code> to the user PATH variable.</li>
+                    </ul>
+                </li>
+                <li>Updated the core Hadoop configuration files (<code>core-site.xml</code>, <code>hdfs-site.xml</code>,
+                    <code>yarn-site.xml</code>, and <code>mapred-site.xml</code>). Update the bin file in the Hadoop
+                    folder. You
+                    can <a
+                        href="https://drive.google.com/drive/folders/1MIEuEfNNX8sI7STp-96wbSZPAKAdBWRo?usp=drive_link"
+                        target="_blank">download the updated bin folder</a> from here, then copy it directly into your
+                    Hadoop
+                    directory. For the XML files, navigate to <code>C:\Hadoop\etc\hadoop</code> and <a
+                        href="https://drive.google.com/drive/folders/19nLZxcYsUSCPObqYxLDcMxZ7I6JOO1gq?usp=drive_link"
+                        target="_blank">download the updated XML files</a>. Just copy and paste them directly into this
+                    folder
+                    to update.
+                </li>
+                <li>Updated the <code>hadoop-env.cmd</code> file to include the <code>JAVA_HOME</code> variable. Set
+                    <code>JAVA_HOME</code> to <code>C:\Java\jdk</code> in the
+                    <code>C:\Hadoop\etc\hadoop\hadoop-env.cmd</code>
+                    file.
+                </li>
+                <li>Launch Command Prompt as an Administrator and execute the command
+                    <code>hdfs namenode -format</code>. This
+                    step is only necessary during the initial setup, as it formats all the namenodes.
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="intro-box">
+            <h2>Troubleshooting</h2>
+            <p>
+                If your DataNode is not running, follow these steps:
+            </p>
+
+            <ol style="text-align: justify;">
+                <p><b>1. DataNode and NameNode Version Mismatch</b></p>
+                <li style="margin-left: 35px;">Navigate to <code>C:\Hadoop\data\dfs\current\namenode</code> and open the
+                    <strong>VERSION</strong> file.
+                </li>
+                <li style="margin-left: 35px;">Copy the <strong>ClusterID</strong> value from the VERSION file.</li>
+                <li style="margin-left: 35px;">Go to <code>C:\Hadoop\data\dfs\current\datanode</code> and paste the same
+                    <strong>ClusterID</strong> value into the corresponding VERSION file in this directory.
+                </li>
+            </ol>
+
+            <ol style="text-align: justify;">
+                <p><b>2. Permission Issues</b></p>
+                <li style="margin-left: 35px;">Check if the DataNode directory is not creating the necessary files.</li>
+                <li style="margin-left: 35px;">Navigate to <code>C:\Hadoop\data\dfs\current\datanode</code> and
+                    right-click on
+                    the directory.</li>
+                <li style="margin-left: 35px;">Select <strong>Properties</strong>, then go to the
+                    <strong>Security</strong> tab.
+                </li>
+                <li style="margin-left: 35px;">Click on <strong>Edit</strong> and ensure that the user has full control
+                    by
+                    selecting <strong>Allow</strong> for all permissions.</li>
+                <li style="margin-left: 35px;">Click <strong>Apply</strong> and then <strong>OK</strong> to save the
+                    changes.
+                </li>
+            </ol>
+
+            <p>
+                In most cases, these steps will resolve the issue with the DataNode not running.
+            </p>
+        </div>
+
+        <div class="intro-box">
+
+            <h2>Example Workflow</h2>
+            <ol class="description hadoop-list">
+                <li><strong>Start Command Prompt in Admin Mode</strong>:
+                    <ul>
+                        <li>Press <code>Windows Key + X</code>, select <strong>Command Prompt (Admin)</strong>, and
+                            confirm any
+                            prompts.</li>
+                    </ul>
+                </li>
+                <li><strong>Navigate to the <code>sbin</code> Directory</strong>:
+                    <ul>
+                        <li><code>cd C:\Hadoop\sbin</code>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Start HDFS</strong>:
+                    <ul>
+                        <li><code>start-dfs.cmd</code>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Start YARN</strong>:
+                    <ul>
+                        <li><code>start-yarn.cmd</code></li>
+                    </ul>
+                </li>
+                <li><strong>Verify HDFS</strong>:
+                    <ul>
+                        <li>Open <a href="http://localhost:9864/" target="_blank">http://localhost:9864/</a> in the web
+                            browser for datanode information.</li>
+                        <li>Open <a href="http://localhost:9870/" target="_blank">http://localhost:9870/</a> in the web
+                            browser for namenode information.</li>
+                    </ul>
+                </li>
+                <li><strong>Verify YARN</strong>:
+                    <ul>
+                        <li>Open <a href="http://localhost:8088/" target="_blank">http://localhost:8088/</a> in the web
+                            browser.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <p>Following these steps will help ensure that Hadoop services are correctly started and running on the
+                local machine.
+                For more detailed information, refer to the official <a href="https://hadoop.apache.org/docs/"
+                    target="_blank">Apache Hadoop documentation</a>. Detailed steps for starting this services are
+                provided later in
+                this page.</p>
+        </div>
+
+        <div class="command-box">
+            <div class="command-title-2">Starting Apache Hadoop Services</div>
+            <p class="description">Follow these steps to start the Hadoop Distributed File System (HDFS) and YARN (Yet
+                Another Resource
+                Negotiator):
+            </p>
+            <p><strong>Step 1:</strong> Open Command Prompt in Administrator Mode</p>
+            <p>To avoid permission issues, it's important to run the command prompt with administrative privileges.</p>
+            <ol>
+                <li>Press <code>Windows Key + X</code> and select <strong>Command Prompt (Admin)</strong> or
+                    <strong>Windows
+                        PowerShell (Admin)</strong>.
+                </li>
+                <li>Confirm any prompts to allow the command prompt to run as an administrator.</li>
+            </ol>
+            <p>Step 2: Navigate to the Hadoop <code>sbin</code> Directory</p>
+            <p>Change the directory to the Hadoop <code>sbin</code> directory where the startup scripts are located.
+            </p>
+            <pre class="command">cd C:\Hadoop\sbin</pre><button class="copy-button">Copy Command</button>
+            <div class="command-desc">
+                <strong>Description:</strong>
+                <ul>
+                    <li>The command <code>cd C:\Hadoop\sbin</code> changes the current directory to the
+                        <code>sbin</code> folder in
+                        the Hadoop installation directory.
+                    </li>
+                </ul>
+                <strong>Output:</strong>
+                <ul>
+                    <li>The prompt will change to <code>C:\Hadoop\sbin</code>, indicating that you are now in the
+                        correct directory.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="command-box">
+            <div class="command-title-2">Starting HDFS Services</div>
+            <p class="description"><strong>Step 3:</strong> Start the Hadoop Distributed File System (HDFS)</pp>
+            <p>Run the following command to start the HDFS daemons (NameNode, Secondary NameNode, and DataNode):</p>
+            <pre class="command">start-dfs.cmd</pre><button class="copy-button">Copy Command</button>
+            <div class="command-desc">
+                <strong>Description:</strong>
+                <ul>
+                    <li>The command <code>start-dfs.cmd</code> starts the Hadoop Distributed File System (HDFS) daemons,
+                        including
+                        the NameNode, Secondary NameNode, and DataNode processes.</li>
+                    <li>These processes are responsible for managing the distributed storage in Hadoop, ensuring data is
+                        stored
+                        across multiple nodes for fault tolerance and high availability.</li>
+                </ul>
+                <strong>Output:</strong>
+                <ul>
+                    <li>Log messages indicating that the NameNode, Secondary NameNode, and DataNode services have
+                        started
+                        successfully.</li>
+                    <li>The prompt will return, indicating the command has finished executing.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="command-box">
+            <div class="command-title-2">Starting YARN Services and Verification</div>
+            <p class="description"><strong>Step 4:</strong> Start YARN</pp>
+            <p>Run the following command to start YARN daemons (ResourceManager and NodeManager):</p>
+            <pre class="command">start-yarn.cmd</pre><button class="copy-button">Copy Command</button>
+            <div class="command-desc">
+                <strong>Description:</strong>
+                <ul>
+                    <li>The command <code>start-yarn.cmd</code> starts the YARN (Yet Another Resource Negotiator)
+                        daemons, including
+                        the ResourceManager and NodeManager processes.</li>
+                    <li>The ResourceManager is responsible for managing resources across the cluster and scheduling
+                        applications,
+                        while the NodeManager manages resources on a single node.</li>
+                </ul>
+                <strong>Output:</strong>
+                <ul>
+                    <li>Log messages indicating that the ResourceManager and NodeManager services have started
+                        successfully.</li>
+                    <li>The prompt will return, indicating the command has finished executing.</li>
+                </ul>
+            </div>
+            <p><strong>Step 5:</strong> Verify Hadoop Services</p>
+
+            <p>HDFS Verification</p>
+            <p>Open a web browser and navigate to the HDFS web UI to verify that the DataNode and NameNode are running
+                correctly:</p>
+            <p><strong>
+                    <i>For Datanode: </i>
+                </strong><a href="http://localhost:9864/" target="_blank">http://localhost:9864/</a>
+            </p>
+            <p>
+                <i><strong>For Namenode: </strong></i><a href="http://localhost:9870/"
+                    target="_blank">http://localhost:9870/</a>
+            </p>
+            <p>This URL provides information about the HDFS NameNode status and allows you to browse the file system.
+            </p>
+
+            <p>YARN Verification</p>
+            <p>To verify that YARN is running correctly, navigate to the YARN ResourceManager web UI:</p>
+            <p><a href="http://localhost:8088/" target="_blank">http://localhost:8088/</a></p>
+            <p>This URL provides information about the cluster status, including running applications and available
+                resources.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Thank You section -->
+
+    <section id="thank-you" style="text-align: center; padding: 20px; background-color: #f1f1f1" ">
+        <h2 >Thank You</h2>
+        <p>
+            Thank you for visiting this website.<br>
+            All the Best for your exam and shine like a star.
+        </p>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        &copy; Powered By Team C-14.<br> All rights reserved.
+    </footer>
+
+
+</body>
+<script src="js/commands.js"></script>
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+</html>

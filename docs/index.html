@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS  CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="images/Book_Logo.jpg" type="image/jpeg">
+    <title>Study Materials</title>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <!-- Bootstrap Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+    <div class="container">
+        <!-- Home at the Left -->
+        <a class="navbar-brand" href="index.html">Home</a>
+
+        <!-- Navbar Toggle Button for Mobile -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Centered Navbar Items -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item dropdown px-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSemester" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Semester
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownSemester">
+                        <a class="dropdown-item" href="#1-sem">1 Semester</a>
+                        <a class="dropdown-item" href="#2-sem">2 Semester</a>
+                        <a class="dropdown-item" href="#3-sem">3 Semester</a>
+                        <a class="dropdown-item" href="#4-sem">4 Semester</a>
+                        <a class="dropdown-item" href="#5-sem">5 Semester</a>
+                        <a class="dropdown-item" href="#6-sem">6 Semester</a>
+                        <a class="dropdown-item" href="#7-sem">7 and 8 Semester</a>
+    
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown px-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownResources" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Resources
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownResources">
+                        <a class="dropdown-item" href="Astyle-Commands.html">Astyle</a>
+                        <a class="dropdown-item" href="Git-Commands.html">Git</a>
+                        <a class="dropdown-item" href="Hadoop-Commands.html">Hadoop</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown px-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProjects" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Projects
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownProjects">
+                        <a class="dropdown-item" href="https://library-management-website.netlify.app/">Library
+                            Management System</a>
+                        <a class="dropdown-item"
+                            href="https://ml-model-datasets-using-apps-3gy37ndiancjo2nmu36sls.streamlit.app/">HyperTuneML</a>
+                    </div>
+                </li>
+
+
+            </ul>
+        </div>
+
+        <!-- Search Button at the Right -->
+        <div>
+            <button id="searchButton" class="btn btn-outline-light">Search</button>
+        </div>
+    </div>
+</nav>
+
+    <br><br>
+
+    <section id="introduction">
+        <div class="container mt-5">
+            <div class="header-container">
+                <h1 style="height: 70px; width:50%; background-color: #fff; display: flex; align-items: center; justify-content: center;"><i class="fas fa-book"></i>&nbsp; Study Materials</h1>
+            </div>
+
+            <section id="search-bar" class="hidden">
+                <div class="container" id="search-container">
+                    <input type="text" id="searchInput" placeholder="Search for subjects..." class="form-control">
+                    <ul id="suggestions" class="list-group"></ul>
+                </div>
+            </section>
+
+            <br>
+            <div class="intro-box">
+                <h2>Introduction</h2>
+                <p>Welcome to the Study Materials Repository. Here, you'll find notes and resources for various subjects
+                    across different
+                    semesters. Use the table of contents in the dropdown menu to navigate through the subjects by
+                    semester.</p>
+                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/Syllabus" target="_blank"
+                    class="tool-button">View Syllabus</a>&nbsp;
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 1st Semester -->
+    <section id="1-sem">
+        <div class="container mt-5">
+            <div class="semester-box">
+                <h2>1 Semester</h2><br>
+                <div class="row">
+                    <div class="col-md-4" id="em-1-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-calculator"></i> Essential Mathematics I</h5>
+                                <br>
+                                <p class="card-text">Mathematical foundations and techniques for engineering problems.
+                                </p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/1 SEMESTER/Engineering-Mathematics-I"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="es-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-leaf"></i>Applied Physics</h5><br>
+                                <p class="card-text">Study of the Indian laws and rights and how to protect it.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/1 SEMESTER/Environmental-Science"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="fee-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-microchip"></i> Intro to Electronics
+                                    Engineering</h5>
+                                <p class="card-text">Basics of electronics engineering and its applications.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/1 SEMESTER/Foundations-of-Electronics-Engineering"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Additional subjects for 1st semester -->
+                    <div class="col-md-4" id="fcb-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-dna"></i> Introduction to Internet of things
+                                </h5>
+                                <p class="card-text">Introduction to internet of things.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/1 SEMESTER/Fundamentals-of-Computational-Biology"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="lws-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-pen"></i>1 Credit Courses-1</h5><br>
+                                <p class="card-text">All the one credits at a go.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/1 SEMESTER/Language-and-Writing-Skills"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="lpcc-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-code"></i> POP using C
+                                </h5>
+                                <p class="card-text">Introduction to programming concepts using the C language.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/1 SEMESTER/Learning-Programming-Concepts-With-C"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Learning-Programming-Concepts-With-C"
+                                    target="_blank" class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="centerRow_1">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 2nd Semester -->
+    <section id="2-sem">
+        <div class="container mt-5">
+            <div class="semester-box">
+                <h2>2 Semester</h2>
+                <br>
+                <div class="row">
+                    <div class="col-md-4" id="dsa-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-sitemap"></i> Introduction to C++</h5>
+                                <p>Study the C++ language.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/2 SEMESTER/Data-Structure-Using-C"
+                                    target="_blank" class="tool-button">View
+                                    Notes</a>&nbsp;
+                                <a href="https://github.com/madhurimarawat/Data-structure-using-C" target="_blank"
+                                    class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="dld-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-project-diagram"></i>Intro to Electrical Engineering</h5>
+                                <p>Principles of digital logic and circuit design.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/2 SEMESTER/Digital-Logic-and-Design"
+                                    target="_blank" class="tool-button">View
+                                    Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="em-2-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-square-root-alt"></i> Essential Mathematics II</h5>
+                                <p>Advanced mathematical techniques for engineering problems.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/2 SEMESTER/Engineering-Mathematics-II"
+                                    target="_blank" class="tool-button">View
+                                    Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Additional subjects for 2nd semester -->
+                    <div class="col-md-4" id="entrepreneur-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-lightbulb"></i>1 Credit Courses-2</h5>
+                                <p>Getting started with 1 credit courses.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/2 SEMESTER/Entrepreneurship"
+                                    target="_blank" class="tool-button">View
+                                    Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="oop-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-object-group"></i>Applied Chemistry</h5>
+                                <p>Principles and techniques of object-oriented programming.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/2 SEMESTER/Object-Oriented-Programming"
+                                    target="_blank" class="tool-button">View
+                                    Notes</a>&nbsp;
+                                <a href="https://github.com/madhurimarawat/Object-oriented-programming-with-c-plus-plus"
+                                    target="_blank" class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="pds-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-tools"></i>CAED</h5>
+                                <p>Introduction to computer aided drawings.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/2 SEMESTER/Python-For-Datascience"
+                                    target="_blank" class="tool-button">View
+                                    Notes</a>&nbsp;
+                                <a href="https://github.com/madhurimarawat/Python-for-Datascience" target="_blank"
+                                    class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 3rd Semester -->
+    <section id="3-sem">
+        <div class="container mt-5">
+            <div class="semester-box">
+                <h2>3 Semester</h2>
+                <br>
+                <div class="row">
+                    <div class="col-md-4" id="ada-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-chart-line"></i>Data structures and its applications</h5>
+                                <p>Learn about data structures and its applications.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/3 SEMESTER/Analysis & Design of Algorithm"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Analysis-and-Design-of-Algorithm-using-python"
+                                    target="_blank" class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="coa-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-server"></i> Computer Organization and Architecture</h5>
+                                <p>Fundamentals of computer organization and architecture.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/3 SEMESTER/Computer Organization and Architecture"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="dbms-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-database"></i> Electives(DMD,Web3,Python)</h5>
+                                <p> All the electives teaching data models,taking to web3 and introducing to python</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/3 SEMESTER/Database Management System"
+                                    target="_blank" class="tool-button">View
+                                    Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Additional subjects for 3rd semester -->
+                    <div class="col-md-4" id="ds-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-project-diagram"></i>Essential Maths 3</h5>
+                                <p>Fundamentals of discrete mathematics and structures.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/3 SEMESTER/Discrete Structure"
+                                    target="_blank" class="tool-button">View
+                                    Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="ps-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-chart-pie"></i>1 credit Courses-3</h5>
+                                <p>Getting started with 1 credit courses for continous learning</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/3 SEMESTER/Operating System"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="ipr-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-book-open"></i>Object-Oriented-Programming</h5>
+                                <p>Learn about core Java and its OOP principles.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/3 SEMESTER/Independent Project"
+                                    target="_blank" class="tool-button">View
+                                    Notes</a>
+                                <a href="https://github.com/madhurimarawat/Library-Management-System" target="_blank"
+                                    class="tool-button_2">Lab Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4th Semester -->
+    <section id="4-sem">
+        <div class="container mt-5">
+            <div class="semester-box">
+                <h2>4 Semester</h2>
+                <br>
+                <div class="row">
+                    <div class="col-md-4" id="ai-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-robot"></i> Operating System</h5>
+                                <p>Learn about the core OS and its applications and practicality in real world.</p><br>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/4 SEMESTER/Artificial Intelligence-Principles and Applications"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                    <a href="https://github.com/madhurimarawat/Data-Visualization-using-python"
+                                    target="_blank" class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="cn-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-network-wired"></i>
+                                    Discrete Maths
+                                </h5>
+                                <br>
+                                <p>Study of discrete mathematics and applications.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/4 SEMESTER/Computer Network"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="dv-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-chart-line"></i> DBMS
+                    </h5><br>
+                                <p>Learn about database and its management.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/4 SEMESTER/Data Visualization"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Data-Visualization-using-python"
+                                    target="_blank" class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Additional subjects for 4th semester -->
+                    <div class="col-md-4" id="os-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-desktop"></i>Elective(SDS,ADS,EH)</h5>
+                                <p>Concepts OF Statistics,data structures in C++ and ethical hacking</p><br>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/4 SEMESTER/Operating System"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="rds-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-database"></i> Design and Analysis of Algorithms</h5>
+                                <p>Data analysis and visualization using the R programming language.
+                                </p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/4 SEMESTER/R for Datascience"
+                                    target="_blank" class="tool-button">View Notes</a>&nbsp;
+                                <a href="https://github.com/madhurimarawat/R-for-Datascience" target="_blank"
+                                    class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="toc-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-brain"></i> 1 Credit Courses-4
+                                    </h5>
+                                <p>Getting started with 1 credit courses for continous learning</p><br>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/4 SEMESTER/Theory of Computation"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5th Semester -->
+    <section id="5-sem">
+        <div class="container mt-5">
+            <div class="semester-box">
+                <h2>5 Semester</h2>
+                <br>
+                <div class="row">
+                    <div class="col-md-4" id="cc-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-calculator"></i>
+                                Automata and Compiler Design
+                                    </h5><br>
+                                <p>Have an insight into compiler world and its overview</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Computational Complexity"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="cns-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-lock"></i> AI and ML
+                                
+                                    </h5>
+                                <p>Fundamentals of Artificial Intelligence and machine learning</p><br><br>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Cryptography and Network Security"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Cryptography-and-Network-Security"
+                                    target="_blank" class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="ida-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-database"></i>
+                                Computer Networks
+                                </h5><br>
+                                <p>Delve into world of networks in a computer and its importance.</p><br>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Intelligent Data Analysis"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Intelligent-Data-Analysis" target="_blank"
+                                    class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Additional subjects for 5th semester -->
+                    <div class="col-md-4" id="nlp-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-language"></i> Professional Elective-1
+                                
+                            </h5>
+                                <p>Includes ETL and analytics and Information Security</p><br><br>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Natural Language Processing"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Natural-Language-Processing-in-Python"
+                                    target="_blank" class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="prml-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-wave-square"></i> Research Methodology and IPR</h5>
+                                <p>Study about importance of research and its importance.</p><br>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Pattern Recognition and Machine Learning"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Pattern-Recognition-and-Machine-Learning"
+                                    target="_blank" class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="vt-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-sliders-h">Mobile Application Developement Lab</i> 
+                                    </h5><br>
+                                <p>Learn to build mobile apps and learn its technologies.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Vocational Training"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Final-Internship-Project" target="_blank"
+                                    class="tool-button_2">Lab
+                                    Work</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+    <section id="6-sem">
+        <div class="container mt-5">
+            <div class="semester-box">
+                <h2>6 Semester</h2>
+                <br>
+                <div class="row">
+                    <div class="col-md-4" id="cc2-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-calculator"></i>
+                                    Software Engineering
+                                    </h5><br>
+                                <p>Analysis of algorithm efficiency and classification of computational problems.</p><br>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Computational Complexity"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="cns2-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-lock"></i> Cloud Computing
+                    
+                                    </h5>
+                                    <br>
+                                <p>Fundamentals of cloud and data storage and information protection.</p><br>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Cryptography and Network Security"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Cryptography-and-Network-Security"
+                                    target="_blank" class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="ida2-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-database"></i>
+                                    Deep Learning
+                                </h5><br>
+                                <p>Subset of machine learning that uses neural networks with many layers to model complex patterns in data.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Intelligent Data Analysis"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Intelligent-Data-Analysis" target="_blank"
+                                    class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Additional subjects for 5th semester -->
+                    <div class="col-md-4" id="nlp2-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-language"></i> Natural
+                                    Language
+                                    Processing+IOT</h5>
+                                <p>Computational techniques for analyzing and understanding human language.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Natural Language Processing"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Natural-Language-Processing-in-Python"
+                                    target="_blank" class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="prml2-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-wave-square"></i> Devops
+                    </h5>
+                                <p>Set of practices that combines software development and IT operations to shorten the development lifecycle </p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Pattern Recognition and Machine Learning"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Pattern-Recognition-and-Machine-Learning"
+                                    target="_blank" class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="vt2-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-sliders-h"></i> 1 Credit Courses-6
+                                    </h5><br>
+                                <p>Learn technologies of your interest so to make your career choices</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/5 SEMESTER/Vocational Training"
+                                    target="_blank" class="tool-button">View Documents</a>
+                                <a href="https://github.com/madhurimarawat/Final-Internship-Project" target="_blank"
+                                    class="tool-button_2">Lab
+                                    Work</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+
+    <!-- 7th Semester -->
+    <section id="7-sem">
+        <div class="container mt-5">
+            <div class="semester-box">
+                <h2>7 and 8 Semester</h2>
+                <br>
+                <div class="row">
+                    <!-- Subjects for 7th semester -->
+                    <div class="col-md-4" id="agt-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-chess"></i>Engineering Economics</h5>
+                                <p>Application of economic principles to evaluate and guide engineering decisions.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/7 SEMESTER/Algorithmic Gaming Theory"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="bda-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-chart-bar"></i> Big Data Analytics</h5>
+                                <p>Analyzing large datasets to extract valuable insights and trends.</p><br>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/7 SEMESTER/Big Data Analytics"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Big-Data-Analytics" target="_blank"
+                                    class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="dw-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-cogs"></i> Cyber Security</h5>
+                                <p>Practice of protecting systems, networks, and data from digital attacks and unauthorized access.</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/7 SEMESTER/Data Wrangling"
+                                    target="_blank" class="tool-button">View Notes</a>
+                                <a href="https://github.com/madhurimarawat/Data-Wrangling" target="_blank"
+                                    class="tool-button_2">View Labwork</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <!-- Additional subjects for 7th semester -->
+
+                    <div class="col-md-4" id="bia-card">
+                        <div class="card">
+                            <br>
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-industry"></i> Professional Electives-2
+                    </h5>
+                                <p>Explore the latest technologies buzzing around the globe and make a good base of it.
+                                    </p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/7%20SEMESTER/AI%20Subjects/Business%20Intelligence%20and%20Analytics"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" id="isr-card">
+                        <div class="card">
+                            <br>
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-satellite-dish"></i> Course end Requirements
+                                
+                                </h5>
+                                <p>Indulge into crucial areas of growth through technical Seminars and AICTE activities</p>
+                                <a href="https://github.com/madhurimarawat/Semester-Notes/tree/main/7%20SEMESTER/AI%20Subjects/Intelligen%20%20System%20and%20Robotics"
+                                    target="_blank" class="tool-button">View Notes</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Additional project for 7th semester -->
+
+                    <div class="col-md-4" id="mp7-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-chart-area"></i> Major Project</h5>
+                                <br>
+                                <p>A major project is a comprehensive, high-impact assignment that showcases a student's skills, knowledge, and problem-solving abilities in their field of study.</p>
+                                <a href="https://github.com/madhurimarawat/Stock-Market-Prediction/tree/main/Documents"
+                                    target="_blank" class="tool-button">View Documents</a>
+                                <a href="https://stock-market-numerical-text-hybrid-prediction.streamlit.app/"
+                                    target="_blank" class="tool-button_2">Lab
+                                    Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- Thank You section -->
+
+    <section id="thank-you" style="text-align: center; padding: 20px; background-color: #f1f1f1" ">
+        <h2 >Thank You</h2>
+        <p>
+            Thank you for visiting this website.<br>
+            All the Best for your exam and shine like a star.
+        </p>
+    </section>
+    <!-- Footer -->
+    <footer class="footer-section">
+        &copy;Powered By Team C-14.<br> All rights reserved.
+    </footer>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+<!-- jQuery first, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/index.js"></script>
+
+</html>
