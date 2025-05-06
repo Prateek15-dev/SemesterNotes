@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Notes - Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Same sidebar as dashboard -->
+    <div class="admin-sidebar">
+        <!-- ... Copy sidebar from dashboard ... -->
+    </div>
+
+    <div class="main-content">
+        <div class="page-header">
+            <h4>Upload Notes</h4>
+        </div>
+        
+        <div class="card">
+            <div class="card-body">
+                <form id="uploadForm" class="upload-form">
+                    <div class="form-group">
+                        <label>Select Semester</label>
+                        <select class="form-control" id="semester" required>
+                            <option value="">Choose Semester</option>
+                            <option value="1">1st Semester - Foundation Year</option>
+                            <option value="2">2nd Semester - Foundation Year</option>
+                            <option value="3">3rd Semester - Sophomore Year</option>
+                            <option value="4">4th Semester - Sophomore Year</option>
+                            <option value="5">5th Semester - Pre-Final Year</option>
+                            <option value="6">6th Semester - Pre-Final Year</option>
+                            <option value="7">7th Semester - Final Year</option>
+                            <option value="8">8th Semester - Final Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject Name</label>
+                        <input type="text" class="form-control" id="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Upload PDF</label>
+                        <input type="file" class="form-control-file" id="pdfFile" accept=".pdf" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description (Optional)</label>
+                        <textarea class="form-control" id="description" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-custom">
+                        <i class="fas fa-upload mr-2"></i>Upload Notes
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
