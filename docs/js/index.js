@@ -313,3 +313,32 @@ document.addEventListener('DOMContentLoaded', initializeSemesterSections);
 
 // Handle search functionality if needed
 // ...existing search code...
+
+
+
+function checkAuthStatus() {
+  const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+  const authButton = document.getElementById('authButton');
+  
+  if (isLoggedIn === 'true') {
+      authButton.textContent = 'Logout';
+      authButton.addEventListener('click', handleLogout);
+  } else {
+      authButton.textContent = 'Login';
+      authButton.addEventListener('click', handleLogin);
+  }
+}
+
+
+function handleLogin() {
+  window.location.href = 'login.html';
+}
+
+function handleLogout() {
+  sessionStorage.removeItem('isLoggedIn');
+  window.location.href = 'login.html';
+}
+document.addEventListener('DOMContentLoaded', checkAuthStatus);
+
+
+

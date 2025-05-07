@@ -329,7 +329,7 @@ body {
   font-family: Arial, sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   /* background-color: #FFFFF0; */
-  background: url("/Semester-Notes/docs/images/background.jpeg") no-repeat center center;
+  background: url("/docs/images/background.jpeg") no-repeat center center;
   background-size: cover; /* Ensures the image covers the entire navbar */
   background-attachment: fixed; /* Optional: Keeps the image fixed when scrolling */
   background-position: center;

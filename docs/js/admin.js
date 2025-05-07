@@ -3,9 +3,9 @@ import { supabase } from './supabase.js';
 // Check if user is authenticated
 function checkAuth() {
     if (!localStorage.getItem('adminLoggedIn') && !window.location.href.includes('login.html')) {
-        window.location.href = 'login.html';
+        window.location.href = '/docs/login.html';
     } else if (localStorage.getItem('adminLoggedIn') && window.location.href.includes('login.html')) {
-        window.location.href = 'dashboard.html';
+        window.location.href = '/docs/admin/dashboard.html';
     }
 }
 
@@ -18,16 +18,17 @@ document.getElementById('loginForm')?.addEventListener('submit', function(e) {
 
     if (username === 'admin' && password === 'admin123') {
         localStorage.setItem('adminLoggedIn', 'true');
-        window.location.href = 'dashboard.html';
+        window.location.href = '/docs/admin/dashboard.html';
     } else {
-        alert('Invalid username or password!');
+        sessionStorage.setItem('isLoggedIn', 'true');
+        window.location.href = '/docs/index.html';
     }
 });
 
 // Handle logout
 document.getElementById('logoutBtn')?.addEventListener('click', function() {
     localStorage.removeItem('adminLoggedIn');
-    window.location.href = 'login.html';
+    window.location.href = '/docs/login.html';
 });
 
 // Check authentication on page load
@@ -133,3 +134,4 @@ function showAlert(message, type) {
 document.addEventListener('DOMContentLoaded', () => {
     loadRecentUploads();
 });
+
