@@ -264,3 +264,52 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+import { supabase } from './supabase.js'
+
+async function loadNotesForSemester(semester) {
+    try {
+        const { data, error } = await supabase
+            .from('notes')
+            .select('*')
+            .eq('semester', semester)
+            .order('created_at', { ascending: false });
+
+        if (error) throw error;
+        
+        const container = document.querySelector(`[data-semester="${semester}"]`);
+        if (!container) return;
+
+        if (data.length === 0) {
+            container.innerHTML = '<div class="col-12"><p class="text-muted">No notes available for this semester.</p></div>';
+            return;
+        }
+
+        container.innerHTML = data.map(note => `
+            <div class="col-md-4" id="fee-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-file-pdf"></i> ${note.subject_name}</h5>
+                        <p class="card-text">Semester ${note.semester} notes</p>
+                        <a href="${note.pdf_url}" target="_blank" class="tool-button">View Notes</a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error loading notes:', error);
+    }
+}
+
+// Load notes for all semesters
+async function initializeSemesterSections() {
+    for (let sem = 1; sem <= 8; sem++) {
+        await loadNotesForSemester(sem);
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeSemesterSections);
+
+// Handle search functionality if needed
+// ...existing search code...
