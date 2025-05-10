@@ -70,6 +70,16 @@
                                 <label>Upload PDF</label>
                                 <input type="file" class="form-control-file" id="pdfFile" accept=".pdf" required>
                             </div>
+
+                            <div class="form-group">
+    <label>Content Type</label>
+    <select class="form-control custom-select" id="contentType" required>
+        <option value="" disabled selected>Select content type</option>
+        <option value="notes">Notes</option>
+        <option value="previous-year">Previous Year Question</option>
+        <option value="question-bank">Question Bank</option>
+    </select>
+</div>
                             <button type="submit" class="btn btn-primary btn-custom">
                                 <i class="fas fa-upload mr-2"></i>Upload Notes
                             </button>

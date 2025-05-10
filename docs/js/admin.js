@@ -47,10 +47,11 @@ uploadForm?.addEventListener('submit', async (e) => {
     try {
         const semester = document.getElementById('semester').value;
         const subject = document.getElementById('subject').value;
+        const contentType = document.getElementById('contentType').value;
         const pdfFile = document.getElementById('pdfFile').files[0];
         
         // Upload file to Supabase Storage
-        const fileName = `${Date.now()}_${pdfFile.name}`;
+        const fileName = `${contentType}/${Date.now()}_${pdfFile.name}`;
         const { data: fileData, error: uploadError } = await supabase.storage
             .from('notes')
             .upload(fileName, pdfFile);
@@ -64,16 +65,17 @@ uploadForm?.addEventListener('submit', async (e) => {
 
         // Insert into database
         const { error: dbError } = await supabase
-            .from('notes')
+            .from(contentType === 'notes' ? 'notes' : contentType === 'previous-year' ? 'previous_year_questions' : 'question_bank')
             .insert([{
                 semester: parseInt(semester),
                 subject_name: subject,
-                pdf_url: publicUrl
+                pdf_url: publicUrl,
+                content_type: contentType
             }]);
 
         if (dbError) throw dbError;
 
-        showAlert('Notes uploaded successfully!', 'success');
+        showAlert(`${contentType.replace('-', ' ')} uploaded successfully!`, 'success');
         uploadForm.reset();
         loadRecentUploads();
     } catch (error) {
@@ -82,33 +84,55 @@ uploadForm?.addEventListener('submit', async (e) => {
     }
 });
 
+
 async function loadRecentUploads() {
     if (!recentUploads) return;
     
     try {
-        const { data, error } = await supabase
-            .from('notes')
-            .select('*')
-            .order('created_at', { ascending: false })
-            .limit(5);
+        // Fetch recent uploads from all content types
+        const [notes, prevYear, questionBank] = await Promise.all([
+            supabase.from('notes')
+                .select('*')
+                .order('created_at', { ascending: false })
+                .limit(2),
+            supabase.from('previous_year_questions')
+                .select('*')
+                .order('created_at', { ascending: false })
+                .limit(2),
+            supabase.from('question_bank')
+                .select('*')
+                .order('created_at', { ascending: false })
+                .limit(2)
+        ]);
 
-        if (error) throw error;
+        if (notes.error) throw notes.error;
+        if (prevYear.error) throw prevYear.error;
+        if (questionBank.error) throw questionBank.error;
 
-        recentUploads.innerHTML = data.map(note => `
+        // Combine and sort all uploads by date
+        const allUploads = [
+            ...notes.data.map(item => ({...item, type: 'Notes'})),
+            ...prevYear.data.map(item => ({...item, type: 'Previous Year Question'})),
+            ...questionBank.data.map(item => ({...item, type: 'Question Bank'}))
+        ].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+        recentUploads.innerHTML = allUploads.map(item => `
             <div class="pdf-preview">
                 <div class="pdf-preview-header">
                     <div>
-                        <h6>${note.subject_name}</h6>
-                        <small class="text-muted">Semester ${note.semester}</small>
+                        <h6>${item.subject_name}</h6>
+                        <small class="text-muted">
+                            Semester ${item.semester} | ${item.type}
+                        </small>
                     </div>
                     <div>
-                        <a href="${note.pdf_url}" target="_blank" class="btn btn-sm btn-primary">
+                        <a href="${item.pdf_url}" target="_blank" class="btn btn-sm btn-primary">
                             <i class="fas fa-download"></i>
                         </a>
                     </div>
                 </div>
                 <small class="text-muted d-block">
-                    Uploaded: ${new Date(note.created_at).toLocaleDateString()}
+                    Uploaded: ${new Date(item.created_at).toLocaleDateString()}
                 </small>
             </div>
         `).join('');
@@ -117,7 +141,6 @@ async function loadRecentUploads() {
         showAlert('Failed to load recent uploads', 'danger');
     }
 }
-
 function showAlert(message, type) {
     const alert = document.createElement('div');
     alert.className = `alert alert-${type} alert-dismissible fade show`;
@@ -135,3 +158,45 @@ document.addEventListener('DOMContentLoaded', () => {
     loadRecentUploads();
 });
 
+// uploadForm?.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+    
+//     try {
+//         const semester = document.getElementById('semester').value;
+//         const subject = document.getElementById('subject').value;
+//         const contentType = document.getElementById('contentType').value;
+//         const pdfFile = document.getElementById('pdfFile').files[0];
+        
+//         // Upload file to Supabase Storage
+//         const fileName = `${contentType}/${Date.now()}_${pdfFile.name}`;
+//         const { data: fileData, error: uploadError } = await supabase.storage
+//             .from('notes')
+//             .upload(fileName, pdfFile);
+
+//         if (uploadError) throw uploadError;
+
+//         // Get public URL
+//         const { data: { publicUrl } } = supabase.storage
+//             .from('notes')
+//             .getPublicUrl(fileName);
+
+//         // Insert into database
+//         const { error: dbError } = await supabase
+//             .from(contentType === 'notes' ? 'notes' : contentType === 'previous-year' ? 'previous_year_questions' : 'question_bank')
+//             .insert([{
+//                 semester: parseInt(semester),
+//                 subject_name: subject,
+//                 pdf_url: publicUrl,
+//                 content_type: contentType
+//             }]);
+
+//         if (dbError) throw dbError;
+
+//         showAlert(`${contentType.replace('-', ' ')} uploaded successfully!`, 'success');
+//         uploadForm.reset();
+//         loadRecentUploads();
+//     } catch (error) {
+//         console.error('Upload error:', error);
+//         showAlert('Upload failed: ' + error.message, 'danger');
+//     }
+// });
