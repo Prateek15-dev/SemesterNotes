@@ -291,7 +291,8 @@ async function loadNotesForSemester(semester) {
                     <div class="card-body">
                         <h5 class="card-title"><i class="fas fa-file-pdf"></i> ${note.subject_name}</h5>
                         <p class="card-text">Semester ${note.semester} notes</p>
-                        <a href="${note.pdf_url}" target="_blank" class="tool-button">View Notes</a>
+                        <a href="${note.pdf_url}" target="_blank" class="tool-button">
+                        <i class="fas fa-download"></i>View Notes</a>
                     </div>
                 </div>
             </div>
@@ -342,3 +343,65 @@ document.addEventListener('DOMContentLoaded', checkAuthStatus);
 
 
 
+async function loadPreviousYearQuestions() {
+    try {
+        const { data, error } = await supabase
+            .from('previous_year_questions')
+            .select('*')
+            .order('semester', { ascending: true });
+
+        if (error) throw error;
+
+        const container = document.getElementById('previous-year-content');
+        container.innerHTML = data.map(question => `
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">${question.subject_name}</h5>
+                        <p class="card-text">Semester ${question.semester}</p>
+                        <a href="${question.pdf_url}" target="_blank" class="btn btn-primary" style="background-color: #4CAF50">
+                            <i class="fas fa-download"></i> View PYQs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error loading previous year questions:', error);
+    }
+}
+
+async function loadQuestionBank() {
+    try {
+        const { data, error } = await supabase
+            .from('question_bank')
+            .select('*')
+            .order('semester', { ascending: true });
+
+        if (error) throw error;
+
+        const container = document.getElementById('question-bank-content');
+        container.innerHTML = data.map(question => `
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">${question.subject_name}</h5>
+                        <p class="card-text">Semester ${question.semester}</p>
+                        <a href="${question.pdf_url}" target="_blank" class="btn btn-primary" style="background-color: #4CAF50">
+                            <i class="fas fa-download"></i>View QB
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error loading question bank:', error);
+    }
+}
+
+// Add to document.addEventListener('DOMContentLoaded', ...)
+document.addEventListener('DOMContentLoaded', () => {
+    loadPreviousYearQuestions();
+    loadQuestionBank();
+    // ...existing code...
+});
