@@ -8,34 +8,24 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
     try {
         const username = document.getElementById('loginUsername').value;
         const password = document.getElementById('loginPassword').value;
-        const isAdmin = document.getElementById('isAdmin').checked;
 
-        // Query user_profiles with username
+        // Query user_profiles with username and password_hash
         const { data: user, error } = await supabase
             .from('user_profiles')
             .select('*')
             .eq('username', username)
-            .eq('password_hash', password) // In production, use proper hashing
+            .eq('password_hash', password) // In production, use proper password hashing
             .single();
 
         if (error || !user) {
             throw new Error('Invalid username or password');
         }
 
-        if (isAdmin && user.role !== 'admin') {
-            throw new Error('Not authorized as admin');
-        }
-
         // Set auth state
-        if (isAdmin) {
-            localStorage.setItem('adminLoggedIn', 'true');
-            window.location.href = '/docs/admin/dashboard.html';
-        } else {
-            sessionStorage.setItem('isLoggedIn', 'true');
-            sessionStorage.setItem('userId', user.id);
-            sessionStorage.setItem('username', username);
-            window.location.href = '/docs/index.html';
-        }
+        sessionStorage.setItem('isLoggedIn', 'true');
+        sessionStorage.setItem('userId', user.id);
+        sessionStorage.setItem('username', username);
+        window.location.href = 'index.html';
     } catch (error) {
         showAlert(error.message, 'danger');
     } finally {
@@ -64,19 +54,15 @@ document.getElementById('signupForm')?.addEventListener('submit', async (e) => {
             throw new Error('Username already taken');
         }
 
-        // Create new user profile
-        const { data, error } = await supabase
+        // Create new user profile with password_hash
+        const { error } = await supabase
             .from('user_profiles')
-            .insert([
-                {
-                    username,
-                    password_hash: password, // In production, use proper hashing
-                    full_name: fullName,
-                    role: 'user'
-                }
-            ])
-            .select()
-            .single();
+            .insert([{
+                username,
+                password_hash: password, // In production, use proper password hashing
+                full_name: fullName,
+                role: 'user'
+            }]);
 
         if (error) throw error;
 
@@ -89,24 +75,6 @@ document.getElementById('signupForm')?.addEventListener('submit', async (e) => {
     } finally {
         button.disabled = false;
     }
-});
-
-// Handle tab switching
-document.querySelectorAll('[data-toggle="tab"]').forEach(tab => {
-    tab.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector(e.target.getAttribute('href'));
-        
-        // Remove active class from all tabs and panes
-        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-        document.querySelectorAll('.tab-pane').forEach(pane => {
-            pane.classList.remove('show', 'active');
-        });
-        
-        // Add active class to clicked tab and its pane
-        e.target.classList.add('active');
-        target.classList.add('show', 'active');
-    });
 });
 
 function showAlert(message, type) {

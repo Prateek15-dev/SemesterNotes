@@ -318,27 +318,27 @@ document.addEventListener('DOMContentLoaded', initializeSemesterSections);
 
 
 function checkAuthStatus() {
-  const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-  const authButton = document.getElementById('authButton');
-  
-  if (isLoggedIn === 'true') {
-      authButton.textContent = 'Logout';
-      authButton.addEventListener('click', handleLogout);
-  } else {
-      authButton.textContent = 'Login';
-      authButton.addEventListener('click', handleLogin);
-  }
-}
-
-
-function handleLogin() {
-  window.location.href = 'login.html';
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    const username = sessionStorage.getItem('username');
+    const authButton = document.getElementById('authButton');
+    
+    if (isLoggedIn === 'true') {
+        authButton.innerHTML = `
+            <i class="fas fa-user"></i> ${username} 
+            <i class="fas fa-sign-out-alt ml-2"></i>
+        `;
+        authButton.addEventListener('click', handleLogout);
+    } else {
+        authButton.innerHTML = `<i class="fas fa-sign-in-alt"></i> Login`;
+        authButton.addEventListener('click', () => window.location.href = 'login.html');
+    }
 }
 
 function handleLogout() {
-  sessionStorage.removeItem('isLoggedIn');
-  window.location.href = 'login.html';
+    sessionStorage.clear();
+    window.location.reload();
 }
+
 document.addEventListener('DOMContentLoaded', checkAuthStatus);
 
 
