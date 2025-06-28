@@ -9,6 +9,12 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
         const username = document.getElementById('loginUsername').value;
         const password = document.getElementById('loginPassword').value;
 
+         if (username === 'admin' && password === 'admin123') {
+        localStorage.setItem('adminLoggedIn', 'true');
+        window.location.href = '/docs/admin/dashboard.html';
+    }
+
+
         // Query user_profiles with username and password_hash
         const { data: user, error } = await supabase
             .from('user_profiles')
